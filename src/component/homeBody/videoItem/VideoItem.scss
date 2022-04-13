@@ -1,0 +1,43 @@
+.wrapVideoItem {
+    // margin-top: 30px;// margin-bottom: 30px;
+
+    .firstWrapItem {
+
+
+        .bodyVideoItem {
+            text-align: left;
+            width: 134%;
+
+            .bodyVideoItemImg {
+                cursor: pointer;
+            }
+
+
+            .textVideo {
+                font-weight: 600;
+                font-size: 16px;
+                cursor: pointer;
+
+                &:hover {
+                    color: #8b4;
+                }
+            }
+        }
+    }
+}
+
+.headerItem {
+    .titleHeader {
+        text-align: left;
+
+
+        .titleHeaderText {
+            color: #8b4;
+
+            &:hover {
+                color: #000;
+            }
+        }
+
+    }
+}

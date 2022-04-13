@@ -1,0 +1,15 @@
+.edit {
+    width: 500px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 25px;
+    -webkit-line-clamp: 4;
+    height: 100px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    cursor: pointer;
+
+    &:hover {
+        color: #8b4;
+    }
+}

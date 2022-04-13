@@ -1,0 +1,89 @@
+.wrapItemBody {
+  color: #000;
+  margin-top: 4px;
+  margin-left: 4px;
+  padding: 0 5px;
+  border: 1px solid rgb(184, 164, 164);
+  border-radius: 3px;
+
+  .wrapItemText {
+    display: flex;
+
+    .itemText {
+      margin: 0 3px;
+      padding: 0 5px;
+      border: 1px;
+      border-radius: 3px;
+      background-color: #eee;
+      cursor: pointer;
+
+      &:hover {
+        color: #8b4;
+      }
+    }
+
+    .itemText-head {
+      color: #fff;
+      background-color: #8b4;
+      margin: 0 3px;
+      padding: 0 5px;
+      border: 1px;
+      font-weight: 600;
+      border-radius: 3px;
+      cursor: pointer;
+
+      &:hover {
+        color: #000;
+      }
+    }
+  }
+
+  .textItem {
+    font-weight: 700;
+    text-align: left;
+    padding: 0 5px;
+    margin-top: 3px;
+
+    &:hover {
+      cursor: pointer;
+      color: #8b4;
+    }
+  }
+
+  .wrapbodyItem {
+    display: flex;
+
+    .bodyItem2 {
+      margin-top: 3px;
+      font-size: 12px;
+
+      &:hover {
+        text-decoration-line: underline;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .wrapTitle {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 14px;
+
+    .title1 {
+      &:hover {
+        cursor: pointer;
+        color: #8b4;
+      }
+    }
+  }
+
+  .wrapTitleSec {
+    .titleSec {
+      &:hover {
+        cursor: pointer;
+        color: #8b4;
+      }
+    }
+  }
+}

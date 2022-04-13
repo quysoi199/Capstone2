@@ -1,0 +1,20 @@
+.wrapSlideItem {
+    position: relative;
+
+    .wrapSlide {
+        .slideifo {
+            height: 300px;
+        }
+    }
+
+    .iconHome {
+        left: 600px;
+        background-color: #8b4;
+
+        &:hover {
+            background-color: rgb(56, 80, 25);
+        }
+    }
+
+    
+}

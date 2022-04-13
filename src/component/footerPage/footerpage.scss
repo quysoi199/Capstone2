@@ -1,0 +1,19 @@
+.wrapFooter {
+  .wrapInfo {
+    display: flex;
+    justify-content: space-between;
+    .wrapInfoTo {
+      font-weight: 700;
+      text-align: left;
+      &:hover {
+        cursor: pointer;
+      }
+      .infoFooter {
+        font-weight: 400;
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+}

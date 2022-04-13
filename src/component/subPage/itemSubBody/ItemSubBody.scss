@@ -1,0 +1,43 @@
+.wrabSubItem {
+    margin-top: 4px;
+    margin-left: 4px;
+    margin-bottom: 4px;
+    padding: 0 5px;
+    border: 1px solid rgb(184, 164, 164);
+    border-radius: 3px;
+
+    .head {
+        text-align: left;
+        margin: 2px 0px;
+        margin-right: 25px;
+        font-weight: bold;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        cursor: pointer;
+
+        &:hover {
+            color: #8b4;
+        }
+    }
+
+    .body {
+        display: flex;
+
+        .imgBody {
+            width: 180px;
+        }
+
+        .bodyInside {
+            margin-left: 10px;
+            text-align: left;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            line-height: 25px;
+            -webkit-line-clamp: 5;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            height: 128px;
+        }
+    }
+}

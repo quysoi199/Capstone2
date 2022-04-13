@@ -1,0 +1,26 @@
+.wrapHeadSubBody {
+    .wrapTagName {
+        display: flex;
+        margin-top: 3px;
+
+        .wrapTagNameElem {
+            margin: 0 3px;
+            padding: 0 5px;
+            border: 1px;
+            border-radius: 3px;
+            background-color: #eee;
+            cursor: pointer;
+
+            &:hover {
+                color: #fff;
+                background-color: #666;
+            }
+        }
+    }
+
+    .wrapCard {
+        .ant-card-body {
+            display: flex;
+        }
+    }
+}

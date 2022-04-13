@@ -1,0 +1,49 @@
+.wrapCardFirst {
+    display: flex;
+    position: relative;
+
+    &::before {
+        background: linear-gradient(transparent 59%, #101114 142%);
+        content: "";
+        height: 100%;
+        position: absolute;
+        width: 100%;
+        z-index: 1
+    }
+
+    .wrapText {
+        .wrapCardText1 {
+            position: absolute;
+            font-weight: bold;
+            left: 30px;
+            bottom: 100px;
+            color: #fff;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 100;
+
+            &:hover {
+                color: #8b4;
+            }
+        }
+
+        .wrapCardText2 {
+            color: #fff;
+            text-align: left;
+            font-size: 20px;
+            position: absolute;
+            left: 30px;
+            bottom: 50px;
+            width: 90%;
+            line-height: 25px;
+            -webkit-line-clamp: 2;
+            height: 50px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            z-index: 100;
+            cursor: auto;
+        }
+    }
+
+
+}
