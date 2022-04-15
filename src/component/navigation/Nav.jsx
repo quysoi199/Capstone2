@@ -3,7 +3,13 @@ import { Row, Col, Menu, Dropdown, Button, Space } from "antd";
 import { Link, useParams } from "react-router-dom";
 import logo from "../../img/logo1.png";
 import "./index.scss";
-import { arrTintuc, arrBongda } from "../constants/constans";
+import {
+  arrTintuc,
+  arrBongda,
+  arrKinhdoanh,
+  arrSuckhoe,
+  arrThegioi,
+} from "../constants/constans";
 function Nav() {
   const menu = (
     <Menu
@@ -45,24 +51,15 @@ function Nav() {
         backgroundColor: "#8b4",
       }}
     >
-      <Menu.Item>
-        <div>Doanh nhân</div>
-      </Menu.Item>
-      <Menu.Item>
-        <div>Bất động sản</div>
-      </Menu.Item>
-      <Menu.Item>
-        <div>Khởi nghiệp</div>
-      </Menu.Item>
-      <Menu.Item>
-        <div>Doanh nghiệp</div>
-      </Menu.Item>
-      <Menu.Item>
-        <div>Ngân hàng</div>
-      </Menu.Item>
-      <Menu.Item>
-        <div>Giá vàng</div>
-      </Menu.Item>
+      {arrKinhdoanh.map((item, i) => {
+        return (
+          <Link key={i} to={`/sub-page/` + item.type}>
+            <Menu.Item>
+              <div>{item.name}</div>
+            </Menu.Item>
+          </Link>
+        );
+      })}
     </Menu>
   );
   const menuhealth = (
@@ -71,33 +68,15 @@ function Nav() {
         backgroundColor: "#8b4",
       }}
     >
-      <Menu.Item>
-        <div>Vacine COVID-19</div>
-      </Menu.Item>
-      <Menu.Item>
-        <div>Số liệu COVID-19</div>
-      </Menu.Item>
-      <Menu.Item>
-        <div>Bệnh đàn ông</div>
-      </Menu.Item>
-      <Menu.Item>
-        <div>Bệnh phụ nữ</div>
-      </Menu.Item>
-      <Menu.Item>
-        <div>Sức khỏe tình dục</div>
-      </Menu.Item>
-      <Menu.Item>
-        <div>Sức khỏe dinh dưỡng</div>
-      </Menu.Item>
-      <Menu.Item>
-        <div>Ung thư</div>
-      </Menu.Item>
-      <Menu.Item>
-        <div>Phát minh y học</div>
-      </Menu.Item>
-      <Menu.Item>
-        <div>Tin tức sức khỏe</div>
-      </Menu.Item>
+      {arrSuckhoe.map((item, i) => {
+        return (
+          <Link key={i} to={`/sub-page/` + item.type}>
+            <Menu.Item>
+              <div>{item.name}</div>
+            </Menu.Item>
+          </Link>
+        );
+      })}
     </Menu>
   );
   const menuworld = (
@@ -106,21 +85,15 @@ function Nav() {
         backgroundColor: "#8b4",
       }}
     >
-      <Menu.Item>
-        <div>Điểm nóng</div>
-      </Menu.Item>
-      <Menu.Item>
-        <div>Quân sự</div>
-      </Menu.Item>
-      <Menu.Item>
-        <div>Thế giới động vật</div>
-      </Menu.Item>
-      <Menu.Item>
-        <div>Môi trường</div>
-      </Menu.Item>
-      <Menu.Item>
-        <div>Thiên nhiên</div>
-      </Menu.Item>
+      {arrThegioi.map((item, i) => {
+        return (
+          <Link key={i} to={`/sub-page/` + item.type}>
+            <Menu.Item>
+              <div>{item.name}</div>
+            </Menu.Item>
+          </Link>
+        );
+      })}
     </Menu>
   );
 
@@ -149,7 +122,6 @@ function Nav() {
           </Dropdown>
           <div className="navTagName">Thể thao</div>
           <div className="navTagName">COVID-19</div>
-          <div className="navTagName">Chuyển Void</div>
           <div className="navTagName">Đăng nhập</div>
           <div className="navTagName">Đăng ký</div>
         </div>
