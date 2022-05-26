@@ -1,0 +1,195 @@
+.split-screen {
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)),
+        url("../../img/paper1.jpg");
+    padding: 0;
+    margin: 0;
+
+    .left {
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-size: cover;
+
+        .copy {
+            color: #664;
+            text-align: center;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+
+            h1 {
+                font-size: 2.25rem;
+                font-weight: 700;
+                color: #664;
+
+            }
+
+            p {
+                font-weight: 400;
+            }
+        }
+    }
+
+    .right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        form {
+            width: 350px;
+
+            input[type="email"],
+            input[type="text"],
+            input[type="password"] {
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+                border-radius: 8px;
+                border: 1px solid #c4c4c4;
+                padding: 0.875rem;
+                margin-bottom: 0.875rem;
+            }
+
+            input:focus {
+                outline-color: #c4c4c4;
+            }
+
+            label {
+                display: block;
+                margin-bottom: 0.5rem;
+                font-size: 1.25rem;
+                color: #664;
+
+            }
+
+            .copy {
+                color: black;
+                text-align: center;
+
+                h2 {
+                    font-size: 2.5rem;
+                    color: rgb(22, 133, 109);
+
+                    font-weight: 700;
+                }
+
+                .login-container {
+
+                    p {
+                        margin: 1.5rem 0;
+                        font-size: 1rem;
+                        color: #664;
+
+
+                        a {
+                            text-decoration: none;
+                            color: #3151a8;
+                        }
+
+                        a:hover {
+                            text-decoration: none;
+                            color: #3b64d3;
+                        }
+                    }
+                }
+
+
+            }
+
+            .input-container.fullname {
+                display: flex;
+                margin-left: -15px;
+                margin-right: -15px;
+
+            }
+
+            .input-container.password {
+                position: relative;
+
+                .show-pass {
+                    position: absolute;
+                    top: 55px;
+                    right: 16px;
+                    cursor: pointer;
+                }
+            }
+
+            .forgot {
+                margin-bottom: 20px;
+
+                a {
+                    color: #3f68da;
+                }
+
+                a:hover {
+                    text-decoration: none;
+                    color: #4876f7;
+                }
+
+                p {
+                    color: #664;
+
+                }
+            }
+
+            .signup-btn {
+                display: block;
+                width: 100%;
+                background: #053352;
+                color: rgb(43, 133, 109);
+                font-weight: 700;
+                border: none;
+                padding: 1rem;
+                border-radius: 8px;
+                font-size: 1rem;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+
+            .signup-btn:hover {
+                cursor: pointer;
+                background: #09598f;
+            }
+
+            .login-with-gg {
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+
+                button {
+                    text-transform: capitalize;
+                    font-size: 14px;
+                    font-weight: 200;
+                    letter-spacing: 1.3px;
+                    height: 60px;
+                    padding: 0px 10px;
+                    border-radius: 8px !important;
+                    box-shadow: 0 2px 4px #777;
+                }
+
+                button:focus {
+                    outline-color: #664;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .split-screen {
+        flex-direction: row;
+        height: 100vh;
+
+        .left,
+        .right {
+            display: flex;
+            width: 100%;
+            height: auto;
+        }
+    }
+}

@@ -1,99 +1,33 @@
 import React from "react";
-import { Row, Col, Menu, Dropdown, Button, Space } from "antd";
-import { Link, useParams } from "react-router-dom";
+import { Row, Col, Menu, Dropdown } from "antd";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../img/logo1.png";
 import "./index.scss";
-import {
-  arrTintuc,
-  arrBongda,
-  arrKinhdoanh,
-  arrSuckhoe,
-  arrThegioi,
-} from "../constants/constans";
+
 function Nav() {
-  const menu = (
+  const isUser = localStorage.getItem("user")
+    ? JSON.parse(localStorage.getItem("user"))
+    : null;
+
+  let navigation = useNavigate();
+  const menuUser = (
     <Menu
       style={{
         backgroundColor: "#8b4",
       }}
     >
-      {arrTintuc.map((item, i) => {
-        return (
-          <Link key={i} to={`/sub-page/` + item.type}>
-            <Menu.Item>
-              <div>{item.name}</div>
-            </Menu.Item>
-          </Link>
-        );
-      })}
-    </Menu>
-  );
-  const menufootball = (
-    <Menu
-      style={{
-        backgroundColor: "#8b4",
-      }}
-    >
-      {arrBongda.map((item, i) => {
-        return (
-          <Link key={i} to={`/sub-page/` + item.type}>
-            <Menu.Item>
-              <div>{item.name}</div>
-            </Menu.Item>
-          </Link>
-        );
-      })}
-    </Menu>
-  );
-  const menubusiness = (
-    <Menu
-      style={{
-        backgroundColor: "#8b4",
-      }}
-    >
-      {arrKinhdoanh.map((item, i) => {
-        return (
-          <Link key={i} to={`/sub-page/` + item.type}>
-            <Menu.Item>
-              <div>{item.name}</div>
-            </Menu.Item>
-          </Link>
-        );
-      })}
-    </Menu>
-  );
-  const menuhealth = (
-    <Menu
-      style={{
-        backgroundColor: "#8b4",
-      }}
-    >
-      {arrSuckhoe.map((item, i) => {
-        return (
-          <Link key={i} to={`/sub-page/` + item.type}>
-            <Menu.Item>
-              <div>{item.name}</div>
-            </Menu.Item>
-          </Link>
-        );
-      })}
-    </Menu>
-  );
-  const menuworld = (
-    <Menu
-      style={{
-        backgroundColor: "#8b4",
-      }}
-    >
-      {arrThegioi.map((item, i) => {
-        return (
-          <Link key={i} to={`/sub-page/` + item.type}>
-            <Menu.Item>
-              <div>{item.name}</div>
-            </Menu.Item>
-          </Link>
-        );
-      })}
+      <Link to={`/profile/`}>
+        <Menu.Item>Profile</Menu.Item>
+      </Link>
+      <Menu.Item
+        onClick={() => {
+          localStorage.removeItem("user");
+          localStorage.removeItem("token");
+          navigation("/", { replace: true });
+        }}
+      >
+        Logout
+      </Menu.Item>
     </Menu>
   );
 
@@ -105,25 +39,45 @@ function Nav() {
           <Link to="/">
             <img className="logoNav" src={logo} alt="" />
           </Link>
-          <Dropdown overlay={menu} placement="">
-            <div className="navTagName">Danh mục</div>
-          </Dropdown>
-          <Dropdown overlay={menufootball} placement="bottomLeft">
+
+          <Link to="/sub-page/bong-da" style={{ color: "#fff" }}>
             <div className="navTagName">Bóng đá</div>
-          </Dropdown>
-          <Dropdown overlay={menubusiness} placement="bottomLeft">
+          </Link>
+          <Link to="/sub-page/kinh-doanh" style={{ color: "#fff" }}>
             <div className="navTagName">Kinh doanh</div>
-          </Dropdown>
-          <Dropdown overlay={menuhealth} placement="bottomLeft">
+          </Link>
+          <Link to="/sub-page/suc-khoe" style={{ color: "#fff" }}>
             <div className="navTagName">Sức khỏe</div>
-          </Dropdown>
-          <Dropdown overlay={menuworld} placement="bottomLeft">
+          </Link>
+          <Link to="/sub-page/the-gioi" style={{ color: "#fff" }}>
             <div className="navTagName">Thế giới</div>
-          </Dropdown>
-          <div className="navTagName">Thể thao</div>
-          <div className="navTagName">COVID-19</div>
-          <div className="navTagName">Đăng nhập</div>
-          <div className="navTagName">Đăng ký</div>
+          </Link>
+
+          <Link to="/sub-page/cong-nghe" style={{ color: "#fff" }}>
+            <div className="navTagName">Công nghệ</div>
+          </Link>
+
+          <div className="navTagNames">
+            {isUser ? (
+              <Dropdown overlay={menuUser} placement="bottomLeft">
+                <div>{isUser.email}</div>
+              </Dropdown>
+            ) : (
+              <div className="navMenuuser">
+                <div className="navTagName">
+                  {" "}
+                  <Link style={{ color: "#fff" }} to={`/login/`}>
+                    Đăng nhập
+                  </Link>
+                </div>
+                <div className="navTagName">
+                  <Link style={{ color: "#fff" }} to={`/register/`}>
+                    Đăng ký
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
         </div>
       </Col>
       <Col span={4}></Col>

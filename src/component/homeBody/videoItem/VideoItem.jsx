@@ -1,5 +1,5 @@
 import React from "react";
-import picvideo from "../../../img/picvideo1.jpg";
+import picvideo from "../../../img/picdetail.jpg";
 import { YoutubeOutlined, PlayCircleOutlined } from "@ant-design/icons";
 import "./VideoItem.scss";
 import VideoItemSmall from "./videoItemSmall/VideoItemSmall";
@@ -12,7 +12,7 @@ function VideoItem() {
         <h2 className="titleHeader">
           <YoutubeOutlined style={{ margin: "0 3px", color: "#8b4" }} />
           <a className="titleHeaderText" title="Tổng hợp video">
-            VIDEO CHỌN LỌC
+            TIN TỨC CHỌN LỌC
           </a>
           <hr size="6" width="100%" align="left" color="#8b4" />
         </h2>

@@ -1,0 +1,30 @@
+.dl {
+
+    .profile {
+        display: flex;
+        width: 100%;
+        padding: 10px 10px;
+
+        .dd {
+            float: left;
+            font-size: 17px;
+
+
+            a {
+                padding-right: 5px;
+            }
+        }
+
+        .dt {
+            text-align: left;
+            width: 30%;
+            font-size: 18px;
+        }
+    }
+}
+
+.title {
+    font-size: 34px;
+    font-weight: bold;
+    color: #9b3;
+}

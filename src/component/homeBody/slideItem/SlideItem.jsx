@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Slide } from "react-slideshow-image";
 import "react-slideshow-image/dist/styles.css";
 import SliderItemSmall from "../slideItem/SliderItemSmall";
@@ -9,7 +9,7 @@ import PaperItem from "../../paperList/PaperItem";
 import ExtraTable from "../../extraTable/ExtraTable";
 import { Row, Col } from "antd";
 
-function SlideItem() {
+function SlideItem({ data }) {
   const styleUP = {
     height: 40,
     width: 40,
@@ -55,45 +55,17 @@ function SlideItem() {
 
   return (
     <div className="wrapSlideItem">
-      <Row>
-        <Col style={{ backgroundColor: "#fff" }} span={12}>
-          <Col span={24}>
-            <PaperItem />
-          </Col>
-        </Col>
-        <Col style={{ backgroundColor: "#fff" }} span={12}>
-          <Col span={24}>
-            <PaperItem />
-          </Col>
-        </Col>
-      </Row>
-      <Row>
-        <Col style={{ backgroundColor: "#fff" }} span={24}>
-          <Col span={24}>
-            <ExtraTable />
-          </Col>
-        </Col>
-      </Row>
       <div className="wrapSlide">
         <Slide {...properties}>
-          <div className="slideifo" style={style}>
-            <SliderItemSmall />
-          </div>
-          <div className="slideifo" style={style}>
-            <SliderItemSmall />
-          </div>
-          <div className="slideifo" style={style}>
-            <SliderItemSmall />
-          </div>
-          <div className="slideifo" style={style}>
-            <SliderItemSmall />
-          </div>
-          <div className="slideifo" style={style}>
-            <SliderItemSmall />
-          </div>
-          <div className="slideifo" style={style}>
-            <SliderItemSmall />
-          </div>
+          {data &&
+            data.length > 0 &&
+            data.map((d, i) => {
+              return (
+                <div key={i} className="slideifo" style={style}>
+                  <SliderItemSmall data={d} />
+                </div>
+              );
+            })}
         </Slide>
       </div>
       <Button
